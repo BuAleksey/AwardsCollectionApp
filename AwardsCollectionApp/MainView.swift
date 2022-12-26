@@ -31,7 +31,7 @@ struct MainView: View {
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                 }
-                .transition(.leadingSlide)
+                .transition(.bottomScaleMove)
             }
             
             Spacer()
@@ -48,11 +48,11 @@ struct MainView: View {
 }
 
 extension AnyTransition {
-    static var leadingSlide: AnyTransition {
-        let insertion = AnyTransition.move(edge: .leading)
-            .combined(with: .scale)
-        let removal = AnyTransition.scale
-            .combined(with: .opacity)
+    static var bottomScaleMove: AnyTransition {
+        let insertion = AnyTransition.move(edge: .bottom)
+            .combined(with: .scale(scale: 20, anchor: UnitPoint.bottomLeading))
+            .animation(.spring(dampingFraction: 1))
+        let removal = AnyTransition.opacity
         return .asymmetric(insertion: insertion, removal: removal)
     }
 }

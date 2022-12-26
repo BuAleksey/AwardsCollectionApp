@@ -29,6 +29,7 @@ struct NewYearTreeView: View {
                 path.addLine(to: CGPoint(x: size * 0.4, y: size * 0.2))
             }
             .foregroundColor(.white)
+            .opacity(0.8)
             
             Path { path in
                 path.move(to: CGPoint(x: size * 0.5, y: size * 0.2))
@@ -38,6 +39,7 @@ struct NewYearTreeView: View {
             }
             .strokedPath(StrokeStyle(lineWidth: 4))
             .foregroundColor(.white)
+            .opacity(0.8)
             
             Path { path in
                 path.move(to: CGPoint(x: size * 0.5, y: size * 0.4))
@@ -45,6 +47,7 @@ struct NewYearTreeView: View {
                 path.addLine(to: CGPoint(x: size * 0.2, y: size * 0.7))
             }
             .foregroundColor(.white)
+            .opacity(0.8)
             
             Path { path in
                 path.move(to: CGPoint(x: size * 0.4, y: size * 0.7))
@@ -54,6 +57,7 @@ struct NewYearTreeView: View {
                 path.closeSubpath()
             }
             .foregroundColor(.brown)
+            .opacity(0.8)
         }
     }
 }
